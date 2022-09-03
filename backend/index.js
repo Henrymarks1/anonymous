@@ -11,12 +11,16 @@ app.get('/', (req, res) => {
 });
 
 io.on('connection', (socket) => {
-    console.log("user has connected")
-    socket.on('chat message', (msg) => {
-        console.log('message: ' + msg);
+    console.log(`${socket.id} has connected`)
+    socket.on('roomId', (roomId) => {
+        console.log("Joining room: ", roomId)
+        io.socketsJoin(roomId)
+        console.log(socket.rooms);
+        //io.serverSideEmit("", "world");
       });    
 });
 
 server.listen(3000, () => {
   console.log('listening on *:3000');
 });
+
