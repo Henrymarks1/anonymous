@@ -16,7 +16,8 @@ io.on('connection', (socket) => {
         console.log("Joining room: ", roomId)
         io.socketsJoin(roomId)
         console.log(socket.rooms);
-        //io.serverSideEmit("", "world");
+        socket.emit("joined-room", roomId)
+        
       });    
 });
 
