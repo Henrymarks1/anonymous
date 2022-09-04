@@ -44,8 +44,8 @@
     }
   });
 
-  socket.on("joined-room", roomId =>{
-    console.log("joined-room: ", roomId)
+  socket.on("joined-room", (roomId) => {
+    console.log("joined-room: ", roomId);
     location.href = "/question";
-  })
+  });
 </script>
