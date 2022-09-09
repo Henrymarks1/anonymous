@@ -5,18 +5,7 @@ const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
 
-app.get("/", (req, res) => {
-  console.log("The Anonymous api created by Henry Marks and Andy Negrut");
-  res.sendFile("index.html", { root: "../client/" });
-});
-
-app.get("/question", (req, res) => {
-  res.sendFile("question.html", { root: "../client/" });
-});
-
-app.get("/index.js", (req, res) => {
-  res.sendFile("index.js", { root: "../client/" });
-});
+app.use("/", express.static("../client/"));
 
 io.on("connection", (socket) => {
   console.log(`${socket.id} has connected`);

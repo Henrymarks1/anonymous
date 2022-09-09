@@ -14,7 +14,7 @@ export function createRoom(socket) {
   socket.on("joined-room", (roomId) => {
     console.log("joined-room: ", roomId);
     messageInRoom(socket);
-    location.href = "/question";
+    location.href = "/question.html";
   });
 }
 
