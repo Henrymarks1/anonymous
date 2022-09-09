@@ -14,6 +14,10 @@ app.get("/question", (req, res) => {
   res.sendFile("question.html", { root: "../client/" });
 });
 
+app.get("/index.js", (req, res) => {
+  res.sendFile("index.js", { root: "../client/" });
+});
+
 io.on("connection", (socket) => {
   console.log(`${socket.id} has connected`);
 
