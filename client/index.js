@@ -19,6 +19,8 @@ export function createRoom(socket) {
 }
 
 function messageInRoom(socket) {
+
+  //figure out how to get these DOM objects from inside the file
   var messages = document.getElementById("messages");
   var form = document.getElementById("form");
   var input = document.getElementById("input");
